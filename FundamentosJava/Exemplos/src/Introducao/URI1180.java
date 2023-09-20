@@ -1,3 +1,5 @@
+package Introducao;
+
 import java.util.Scanner;
 
 public class URI1180 {
