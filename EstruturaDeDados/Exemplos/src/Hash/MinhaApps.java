@@ -6,34 +6,36 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 public class MinhaApps {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner teclado = new Scanner(System.in);
-        int Key;
+        int key;
 
-        Registro r1 = new Registro(789,"Registro 1");
-        Registro r2 = new Registro(889,"Registro 2");
+        Registro r1 = new Registro(789, "Registro 1");
+        Registro r2 = new Registro(889, "Registro 2");
 
         System.out.println(r1.hashCode());
         System.out.println(r2.hashCode());
 
-        MapaHash mapa = new MapaHash(100); // Especifica o tamanho do array valores
+//Registro r1, r2, r3, r4;
+        MapaHash mapa = new MapaHash();
 
         mapa.put(new Registro(7865, "Isidro"));
-        mapa.put(new Registro(1234, "Jose"));
-        mapa.put(new Registro(5678, "Nilson"));
-        mapa.put(new Registro(91011, "Isis"));
-
+        mapa.put(new Registro(123, "Josineidson"));
+        mapa.put(new Registro(987, "Nilsonclecio"));
+        mapa.put(new Registro(9832, "Deosdedite"));
         do {
-            System.out.println("Digite um código de registro (-1 para sair):");
-            Key = teclado.nextInt();
-            if (Key != -1) {
-                Registro r = mapa.get(Key);
+            System.out.println("Digite um codigo de registro");
+            key = teclado.nextInt();
+            if (key != -1) {
+
+                Registro r = mapa.get(key);
                 if (r != null) {
-                    System.out.println("Registro Recuperado = " + r.getKey() + " - " + r.getValue());
+                    System.out.println("Registro Recuperado = " + r.getKey() + " – " + r.getValue());
                 } else {
-                    System.out.println("Registro não encontrado.");
+                    System.out.println("Registro nao existente");
                 }
             }
-        } while (Key != -1);
+
+        } while (key != -1);
     }
 }
